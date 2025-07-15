@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.logo img {
+  width: 3.7vw;
+  height: 6vh;
+  margin: 3vh 1vw;
+  display: block;
+  max-height: 100%;
+}
+
+.nav {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: RGB(170 187 204);
+  background-color: rgb(0, 0, 0);
+}
+.nav-inner {
+  display: flex;
+}
+ul {
+  display: flex;
+}
+ul li {
+  list-style: none;
+  font-size: 1.4vw;
+  font-weight: bolder;
+  margin: 4vh 1.7vw;
+}
+.main {
+  height: calc(100% - 75px);
+  width: 100%;
+  display: flex;
+  background-color: black;
+}
+.left {
+  height: 100%;
+  width: 30%;
+  background-color: rgb(14, 13, 13);
+  border: 6px solid black;
+  border-radius: 2.5%;
+  overflow-y: scroll;
+}
+.heading {
+  display: flex;
+  color: white;
+}
+.heading img {
+  width: 4vw;
+  height: 4vh;
+}
+.heading span {
+  font-size: 1.5vw;
+  font-weight: bolder;
+}
+.right {
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(to bottom, rgb(10, 50, 43), rgb(14, 13, 13));
+  border: 6px solid black;
+  border-radius: 2%;
+}
+.libCards{
+  margin: 2vh 1vw;
+}
+.Cards{
+  height: 15%;
+  width: 95%;
+  margin: 0.5vw 0;
+  padding: 3vh 0vw;
+  border: 1px solid white;
+  border-radius: 2%;
+  color: white;
+}
+.Rheading {
+  color: white;
+  font-size: 2.5vw;
+  font-weight: bolder;
+  margin: 2vh 1vw;
+}
