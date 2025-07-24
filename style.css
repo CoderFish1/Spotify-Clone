@@ -19,7 +19,7 @@ html {
 .logo img {
   width: 3.7vw;
   height: 6vh;
-  margin: 3vh 1vw;
+  margin: 1.4vh 1vw;
   display: block;
   max-height: 100%;
 }
@@ -81,10 +81,10 @@ ul li {
   margin: 2vh 1vw;
 }
 .Cards{
-  height: 15%;
+  height: 23%;
   width: 95%;
   margin: 0.5vw 0;
-  padding: 3vh 0vw;
+  padding: 4vh 0vw;
   border: 1px solid white;
   border-radius: 2%;
   color: white;
@@ -94,4 +94,19 @@ ul li {
   font-size: 2.5vw;
   font-weight: bolder;
   margin: 2vh 1vw;
+}
+.rightCards{
+  height: 90%;
+  width: 90%;
+  margin-left: 3vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  overflow-y: scroll;       
+}
+.rCard{
+  height: 40vh;
+  width: 17vw;
+  color: aliceblue;
+  background-color: rgb(46, 40, 40)
 }
