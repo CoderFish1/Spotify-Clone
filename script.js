@@ -21,7 +21,34 @@ async function getSongs() {
 }
 
 async function main() {
+    // get the songs from the local server
   let songs = await getSongs();
   console.log(songs);
+  
+   let divs = document.querySelector(".libCards").getElementsByTagName("div");
+
+  for(let count = 0; count< divs.length; count++){
+    let songUL = divs[count];
+
+    if(count < songs.length){
+        let name = songs[count].split("/").pop().replace(".mp3","").toUpperCase();  // Get the song name from the URL
+    songUL.innerHTML = songUL.innerHTML + "<b>" + name + "</b>" + "<span ><i class='ri-play-circle-fill'></i> </span>"; // Append the song name to the existing content
+    }
+    else{
+        // Fill the rest of the divs with "Coming Soon"
+        songUL.innerHTML += "<span style='font-style: italic;'> Coming Soon</span>";
+    }
+  }
+  // Play the first song
+  let audio = new Audio(songs[0]);
+  audio.play();
 }
 main();
+
+
+// audio.addEventListener("loadeddata", () => {
+//     let duration = audio.duration;
+//     console.log(duration);
+    
+// });
+
