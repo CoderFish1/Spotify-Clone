@@ -20,6 +20,10 @@ async function getSongs() {
   return songs;
 }
 
+playMusic = (track) =>{
+  let audio = new Audio(track)
+  audio.play();
+}
 async function main() {
     // get the songs from the local server
   let songs = await getSongs();
@@ -39,16 +43,14 @@ async function main() {
         songUL.innerHTML += "<span style='font-style: italic;'> Coming Soon</span>";
     }
   }
-  // Play the first song
-  let audio = new Audio(songs[0]);
-  audio.play();
+
+Array.from(document.querySelector(".libCards").getElementsByTagName("i")).forEach((e, i) => {
+  e.addEventListener("click", () => {
+    console.log(e.closest("div").innerText);
+
+    playMusic(songs[i]);
+  });
+});
 }
 main();
-
-
-// audio.addEventListener("loadeddata", () => {
-//     let duration = audio.duration;
-//     console.log(duration);
-    
-// });
 

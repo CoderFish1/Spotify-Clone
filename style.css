@@ -54,10 +54,10 @@ ul li {
   font-weight: bolder;
   margin: 4vh 1.7vw;
   cursor: pointer;
-  transition: 1s ease;
+  transition: 0.5s ease-in;
 }
 ul li:hover{
-  color: rgb(10, 50, 43);
+  color: rgba(207, 219, 255, 0.537);
 }
 
 /* ✅ Main area below fixed navbar */
@@ -213,6 +213,16 @@ ul li:hover{
   height: 3px;
   background-color: rgb(71, 153, 139);
   bottom: 35%;
+}
+.circle{
+  position: absolute;
+  height: 2vh;
+  width: 1vw;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  bottom: -0.8vh;
+  left: 0%;
+  transition: left 0.5s;
 }
 .playBtn {
   display: flex;
