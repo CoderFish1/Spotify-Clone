@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
   margin: 0;
@@ -115,7 +116,7 @@ ul li:hover{
   align-items: center;
   justify-content: space-between;
   padding: 18px 16px;     /* Increased box height */
-  font-size: 1rem;        /* Slightly smaller text */
+  font-size: 1.2vw;        /* Slightly smaller text */
   font-weight: bold;
   line-height: 1.4;
 }
@@ -128,7 +129,7 @@ ul li:hover{
 }
 
 .libCards .Cards i {
-  font-size: 1.3rem;     /* Balanced icon size */
+  font-size: 1.4vw;     /* Balanced icon size */
   cursor: pointer;
 }
 
@@ -153,6 +154,7 @@ ul li:hover{
 
 /* ✅ Scrollable cards */
 .rightCards {
+  position: relative;
   flex-grow: 1;
   width: 90%;
   margin: 0 auto;
@@ -160,7 +162,7 @@ ul li:hover{
   grid-template-columns: repeat(3, 1fr);
   gap: 2vw;
   overflow-y: auto;
-  padding-bottom: 2vh;
+  padding-bottom: 10vh;
 }
 
 /* Card styling */
@@ -199,17 +201,23 @@ ul li:hover{
 }
 .playCard {
   position: absolute;
+  display: flex;
+  justify-content: space-between;
   height: 15%;
-  width: 100%;
+  width: 69.5%;
   background-color: rgba(0, 0, 0, 0.5);
   bottom: 0;
   border: 2px solid rgb(10, 50, 43);
   padding: 1vh 1vw;
 }
+.playCard .songDetail{
+  font-size: 1.3vw;
+  font-family: 'Poppins', sans-serif;
+}
 .playLine {
   z-index: 9999;
   position: absolute;
-  width: 67%;
+  width: 90%;
   height: 3px;
   background-color: rgb(71, 153, 139);
   bottom: 35%;
@@ -229,9 +237,10 @@ ul li:hover{
 }
 .playBtn {
   position: absolute;
-  left: 26%;
+  left: 34%;
   gap: 3vw;
   top: 20%;
+  cursor: pointer;
 }
 .playBtn i {
   color: white;
@@ -241,3 +250,4 @@ ul li:hover{
 .songTime {
   color: white;
 }
+
