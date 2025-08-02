@@ -21,7 +21,7 @@ body {
   width: 100%;
 }
 
-/* ✅ Fixed Navbar */
+/*Fixed Navbar*/
 .nav {
   position: fixed;
   top: 0;
@@ -48,7 +48,10 @@ body {
 ul {
   display: flex;
 }
-
+.line {
+  font-weight: bolder;
+  font-size: 1.4vw;
+}
 ul li {
   list-style: none;
   font-size: 1.4vw;
@@ -79,7 +82,6 @@ ul li:hover {
   overflow-y: auto;
   height: 100%;
 }
-
 .heading {
   display: flex;
   color: white;
@@ -148,7 +150,7 @@ ul li:hover {
     rgba(10, 50, 43, 0.6)
   );
   border: 1px solid rgba(10, 50, 43, 0.8);
-   
+
   margin-bottom: 10px;
   color: white;
   backdrop-filter: blur(4px);
@@ -337,4 +339,125 @@ ul li:hover {
 .songInfo,
 .songTime {
   color: white;
+}
+.hamburger {
+  display: none;
+}
+#close {
+  display: none;
+}
+/* making responsive for mobile view  */
+@media screen and (max-width: 600px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .nav .logo img {
+    width: 7vw;
+    height: 12vh;
+    margin: 0vh 4vw;
+    margin-bottom: 6vh;
+  }
+  .nav-inner ul {
+    margin-right: 1vw;
+    margin-top: 1.5vh;
+  }
+  .nav-inner ul li {
+    font-size: 2.3vw;
+    margin: 4vh 1.7vw;
+  }
+  .line {
+    font-size: 2.4vw;
+  }
+  .left {
+    display: none;
+  }
+  .right {
+    width: 100vw;
+  }
+  .rightCards {
+    display: flex;
+    flex-direction: column;
+  }
+  .rCard {
+    width: 85%;
+    height: 75%;
+    margin: auto;
+    padding: 1vh 2vw;
+    margin-top: 2vh;
+  }
+  .Rheading {
+    font-size: 5.5vw;
+    margin: 2vh 1vw;
+    padding-left: 1vw;
+  }
+  .rCard h4 {
+    font-size: 4.5vw;
+    padding: 1vw 0;
+  }
+  .rCard span {
+    font-size: 4vw;
+  }
+  .playCard {
+    width: 100vw;
+    height: 13vh;
+  }
+  .playBtn {
+    left: 27%;
+    gap: 5vw;
+    top: 20%;
+  }
+  .playBtn i {
+    font-size: 7vw;
+  }
+  .playCard .songDetail {
+    font-size: 3vw;
+  }
+  .songTime {
+    margin-right: 1vw;
+  }
+  #hamburger {
+    display: block;
+    filter: invert(1);
+    font-size: 6.5vw;
+    padding: 1vh 1vw;
+  }
+  .left {
+    position: fixed;
+    z-index: 99999;
+    width: 70vw;
+  }
+  .heading {
+    padding-bottom: 0;
+  }
+  .heading img {
+    width: 7vw;
+    height: 6vh;
+  }
+
+  .heading span {
+    font-size: 3.5vw;
+    font-weight: bolder;
+  }
+
+  .libCards {
+    margin: 3vh 1vw;
+  }
+  .libCards .Cards {
+    font-size: 3vw;
+  }
+  .libCards .Cards i {
+    font-size: 4vw;
+  }
+  .Cards {
+    height: 53%;
+  }
+  #close {
+    display: block;
+    margin-left: 28vw;
+  }
 }

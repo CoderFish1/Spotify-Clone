@@ -111,6 +111,7 @@ async function main() {
     document.getElementById("circle").style.left =
       (newSong.currentTime / newSong.duration) * 100 + "%";
   });
+
   // listening for controlling time with seekBar or playLine
   let playLine = document.querySelector(".playLine");
   let circle = document.getElementById("circle");
@@ -127,6 +128,17 @@ async function main() {
 
     document.getElementById("circle").style.left =
       (newSong.currentTime / newSong.duration) * 100 + "%";
+  });
+
+  // event-listening for hamburger(opening)
+  let ham = document.getElementById("hamburger");
+  ham.addEventListener("click", () => {
+    document.querySelector(".left").style = "display : block";
+  });
+  // event-listening for closing hamburger
+  let close = document.getElementById("close");
+  close.addEventListener("click", () => {
+    document.querySelector(".left").style = "display : none";
   });
 }
 main();
