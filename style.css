@@ -318,7 +318,7 @@ ul li:hover {
   left: 0%;
   top: 50%;
   transform: translateY(-50%);
-  transition: left 0.5s;
+  transition: left 2s;
   box-shadow: 0 0 8px rgb(95, 95, 173), 0 0 16px rgb(152, 152, 197);
   transition: left 0.2s linear, 0.4s ease, box-shadow 0.4s ease;
 }
@@ -327,7 +327,7 @@ ul li:hover {
 }
 .playBtn {
   position: absolute;
-  left: 38%;
+  left: 35%;
   gap: 3vw;
   top: 20%;
   cursor: pointer;
@@ -338,14 +338,18 @@ ul li:hover {
 }
 .songInfo,
 .songTime {
-  color: white;
+  color: rgb(233, 220, 220);
 }
-.hamburger {
+#hamburger {
   display: none;
 }
 #close {
   display: none;
 }
+#volRange{
+  width: 50%;
+}
+
 /* making responsive for mobile view  */
 @media screen and (max-width: 600px) {
   html,
@@ -407,9 +411,9 @@ ul li:hover {
     height: 13vh;
   }
   .playBtn {
-    left: 27%;
-    gap: 5vw;
-    top: 20%;
+    left: 21%;
+    gap: 3vw;
+    top: 21%;
   }
   .playBtn i {
     font-size: 7vw;
@@ -425,39 +429,48 @@ ul li:hover {
     filter: invert(1);
     font-size: 6.5vw;
     padding: 1vh 1vw;
+    cursor: pointer;
   }
   .left {
     position: fixed;
     z-index: 99999;
     width: 70vw;
-  }
-  .heading {
-    padding-bottom: 0;
-  }
-  .heading img {
-    width: 7vw;
-    height: 6vh;
-  }
-
-  .heading span {
-    font-size: 3.5vw;
-    font-weight: bolder;
-  }
-
-  .libCards {
-    margin: 3vh 1vw;
-  }
-  .libCards .Cards {
-    font-size: 3vw;
-  }
-  .libCards .Cards i {
-    font-size: 4vw;
-  }
-  .Cards {
-    height: 53%;
-  }
-  #close {
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
     display: block;
-    margin-left: 28vw;
+
+    .heading {
+      padding-bottom: 0;
+    }
+    .heading img {
+      width: 7vw;
+      height: 6vh;
+    }
+
+    .heading span {
+      font-size: 3.5vw;
+      font-weight: bolder;
+    }
+
+    .libCards {
+      margin: 3vh 1vw;
+    }
+    .libCards .Cards {
+      font-size: 3vw;
+    }
+    .libCards .Cards i {
+      font-size: 4vw;
+    }
+    .Cards {
+      height: 53%;
+    }
+    #close {
+      display: block;
+      margin-left: 28vw;
+      cursor: pointer;
+    }
   }
 }

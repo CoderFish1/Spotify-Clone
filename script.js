@@ -1,5 +1,6 @@
 console.log("Lets start the music!");
 
+let songs;
 let newSong = new Audio();
 // we are doing this as we are not using backend for this project
 // so we are fetching the songs from a local server running on port 5500
@@ -50,7 +51,7 @@ playMusic = (track) => {
 
 async function main() {
   // get the songs from the local server
-  let songs = await getSongs();
+  songs = await getSongs();
   console.log(songs);
 
   let divs = document.querySelector(".libCards").getElementsByTagName("div");
@@ -133,12 +134,59 @@ async function main() {
   // event-listening for hamburger(opening)
   let ham = document.getElementById("hamburger");
   ham.addEventListener("click", () => {
-    document.querySelector(".left").style = "display : block";
+    document.querySelector(".left").style.transform = "translateX(0)";
   });
+
   // event-listening for closing hamburger
   let close = document.getElementById("close");
   close.addEventListener("click", () => {
-    document.querySelector(".left").style = "display : none";
+    document.querySelector(".left").style.transform = "translateX(-100%)";
   });
+
+  // event-listening for play-next
+  let next = document.getElementById("forward");
+  next.addEventListener("click", () => {
+    console.log("Next clicked");
+    let currentName = newSong.src.split("/").pop().replace(".mp3", "");
+    let index = songs.findIndex((s) => s.includes(currentName));
+
+    if (index >= 0 && index + 1 < songs.length) {
+      playMusic(songs[index + 1]);
+    }
+  });
+  // event-listening for play-reverse
+  let reverse = document.getElementById("reverse");
+  reverse.addEventListener("click", () => {
+    console.log("Reverse clicked");
+    let currentName = newSong.src.split("/").pop().replace(".mp3", "");
+    let index = songs.findIndex((s) => s.includes(currentName));
+
+    if (index > 0) {
+      playMusic(songs[index - 1]);
+    } 
+  });
+
+   // logic for volume control
+    let vol = document.getElementById('volRange')
+    newSong.volume = parseFloat(vol.value);
+
+    vol.addEventListener("input", ()=>{
+      newSong.volume = parseFloat(vol.value);
+    })
+
+    // logic for looping song
+    let loop = document.getElementById("loop")
+    loop.addEventListener("click",()=>{
+      newSong.loop = !newSong.loop; // toggling the loop state
+      console.log('Loop is now : ', newSong.loop ? "On" : "Off");
+
+      // color change on toggling on the loop state
+      if(newSong.loop){
+        loop.style.color = "blueviolet";
+      }else{
+        loop.style.color = "white";
+      }
+      
+    })
 }
 main();
