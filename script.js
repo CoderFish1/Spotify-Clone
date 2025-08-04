@@ -68,7 +68,7 @@ async function main() {
       songUL.innerHTML =
         songUL.innerHTML +
         `<b>${name}</b>` +
-        `<span><i class='ri-play-circle-fill'></i></span>`; // Append the song name to the existing content
+        `<span><i style="color: #A78BFA" class='ri-play-circle-fill'></i></span>`; // Append the song name to the existing content
     } else {
       // Fill the rest of the divs with "Coming Soon"
       songUL.innerHTML +=
@@ -132,7 +132,7 @@ async function main() {
   });
 
   // event-listening for hamburger(opening)
-  let ham = document.getElementById("hamburger");
+  let ham = document.getElementById("ham");
   ham.addEventListener("click", () => {
     document.querySelector(".left").style.transform = "translateX(0)";
   });
@@ -163,30 +163,29 @@ async function main() {
 
     if (index > 0) {
       playMusic(songs[index - 1]);
-    } 
+    }
   });
 
-   // logic for volume control
-    let vol = document.getElementById('volRange')
+  // logic for volume control
+  let vol = document.getElementById("volRange");
+  newSong.volume = parseFloat(vol.value);
+
+  vol.addEventListener("input", () => {
     newSong.volume = parseFloat(vol.value);
+  });
 
-    vol.addEventListener("input", ()=>{
-      newSong.volume = parseFloat(vol.value);
-    })
+  // logic for looping song
+  let loop = document.getElementById("loop");
+  loop.addEventListener("click", () => {
+    newSong.loop = !newSong.loop; // toggling the loop state
+    console.log("Loop is now : ", newSong.loop ? "On" : "Off");
 
-    // logic for looping song
-    let loop = document.getElementById("loop")
-    loop.addEventListener("click",()=>{
-      newSong.loop = !newSong.loop; // toggling the loop state
-      console.log('Loop is now : ', newSong.loop ? "On" : "Off");
-
-      // color change on toggling on the loop state
-      if(newSong.loop){
-        loop.style.color = "blueviolet";
-      }else{
-        loop.style.color = "white";
-      }
-      
-    })
+    // color change on toggling on the loop state
+    if (newSong.loop) {
+      loop.style.color = "blueviolet";
+    } else {
+      loop.style.color = "white";
+    }
+  });
 }
 main();

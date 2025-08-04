@@ -63,8 +63,18 @@ ul li {
 ul li:hover {
   color: rgba(132, 142, 173, 0.537);
 }
+#log {
+  background-color: aliceblue;
+  color: black;
+  padding: 2vh 2vw;
+  border-radius: 12px;
+}
+#log:hover {
+  transform: scale(1.05);
+  background-color: aliceblue;
+}
 
-/* ✅ Main area below fixed navbar */
+/*Main area below fixed navbar */
 .main {
   display: flex;
   margin-top: 70px; /* Same as navbar height */
@@ -212,7 +222,8 @@ ul li:hover {
   color: aliceblue;
   background-color: rgb(46, 40, 40);
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  opacity: 0.95;
+  transition: transform 0.4s ease;
   background: linear-gradient(
     145deg,
     rgba(14, 13, 13, 0.9),
@@ -221,6 +232,14 @@ ul li:hover {
   box-shadow: 0 0 10px rgba(10, 50, 43, 0.2);
   backdrop-filter: blur(6px);
 }
+.rCard:hover {
+  opacity: 1;
+  transform: scale(1.01);
+  border: 4px solid rgb(10, 50, 43);
+  box-shadow: 6px 6px 12px rgba(44, 156, 202, 0.4),
+    0px 6px 10px rgba(44, 156, 202, 0.25), 6px 0px 10px rgba(44, 156, 202, 0.25);
+}
+
 .rightCards::-webkit-scrollbar {
   width: 8px;
 }
@@ -236,12 +255,6 @@ ul li:hover {
 
 .rightCards::-webkit-scrollbar-thumb:hover {
   background-color: #2d2d2d;
-}
-.rCard:hover {
-  transform: scale(1.01);
-  border: 4px solid rgb(10, 50, 43);
-  box-shadow: 6px 6px 12px rgba(44, 156, 202, 0.4),
-    0px 6px 10px rgba(44, 156, 202, 0.25), 6px 0px 10px rgba(44, 156, 202, 0.25);
 }
 
 .rCard img {
@@ -346,10 +359,34 @@ ul li:hover {
 #close {
   display: none;
 }
-#volRange{
+#volRange {
   width: 50%;
 }
-
+.devInfo {
+  position: absolute;
+  color: white;
+  right: 0;
+  padding: 2vh 2vw;
+}
+.devInfo span {
+  font-family: cursive;
+}
+#cardPlay {
+  position: absolute;
+  bottom: 10.5vh;
+  right: 1.2vw;
+  z-index: 9999;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0.3;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.4s ease, visibility 0.1s ease;
+}
+.rCard:hover #cardPlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 /* making responsive for mobile view  */
 @media screen and (max-width: 600px) {
   html,
@@ -439,38 +476,44 @@ ul li:hover {
     top: 0;
     left: 0;
     transform: translateX(-100%);
+    opacity: 0.3s;
     transition: transform 0.3s ease-in-out;
     display: block;
+  }
 
-    .heading {
-      padding-bottom: 0;
-    }
-    .heading img {
-      width: 7vw;
-      height: 6vh;
-    }
+  .heading {
+    padding-bottom: 0;
+  }
+  .heading img {
+    width: 7vw;
+    height: 6vh;
+  }
 
-    .heading span {
-      font-size: 3.5vw;
-      font-weight: bolder;
-    }
+  .heading span {
+    font-size: 3.5vw;
+    font-weight: bolder;
+  }
 
-    .libCards {
-      margin: 3vh 1vw;
-    }
-    .libCards .Cards {
-      font-size: 3vw;
-    }
-    .libCards .Cards i {
-      font-size: 4vw;
-    }
-    .Cards {
-      height: 53%;
-    }
-    #close {
-      display: block;
-      margin-left: 28vw;
-      cursor: pointer;
-    }
+  .libCards {
+    margin: 3vh 1vw;
+  }
+  .libCards .Cards {
+    font-size: 3vw;
+  }
+  .libCards .Cards i {
+    font-size: 4vw;
+  }
+  .Cards {
+    height: 53%;
+  }
+  #close {
+    display: block;
+    margin-left: 28vw;
+    cursor: pointer;
+  }
+  #cardPlay {
+    position: absolute;
+    bottom: 13.3vh;
+    right: 4.6vw;
   }
 }
