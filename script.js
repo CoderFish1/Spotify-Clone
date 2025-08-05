@@ -58,7 +58,7 @@ function displayTime() {
 }
 
 async function getSongs() {
-  let a = await fetch("http://127.0.0.1:5500/songs/");
+  let a = await fetch("/songs/");
   let response = await a.text();
 
   let div = document.createElement("div");
@@ -314,6 +314,9 @@ loop.addEventListener("click", () => {
         `;
       card.addEventListener("click", () => {
         renderSongsinLibrary(pl.youtubePlaylistId); //  when playlist card clicked, show songs in library
+        if (window.innerWidth <= 600) {
+    document.querySelector(".left").style.transform = "translateX(0)";
+  }
       });
       container.appendChild(card); //appending the card div inside container
     });
