@@ -315,7 +315,7 @@ ul li:hover {
   width: 96%;
   height: 3px;
   background-color: rgb(71, 153, 139);
-  bottom: 23%;
+  bottom: 22%;
   cursor: pointer;
 }
 #circle {
@@ -336,9 +336,9 @@ ul li:hover {
 }
 .playBtn {
   position: absolute;
-  left: 35%;
+  left: 32%;
   gap: 3vw;
-  top: 32%;
+  top: 37%;
   cursor: pointer;
 }
 .playBtn i {

@@ -10,19 +10,7 @@
       "name": "Chill Mood",
       "description": "Relax and chill with these tracks",
       "image": "cover image/Chill_(mood)/cover.jpg",
-      "youtubePlaylistId": "PLPFzKsPt50V8azAzY0Sg2go23AL9nuAAF"
-    },
-    {
-      "name": "Diljit Dosanjh",
-      "description": "Top hits from Diljit",
-      "image": "cover image/Diljit/cover.jpg",
-      "youtubePlaylistId": "PLTI1f4VXRUmY3cwe3Lk_6w0rtZptLKKDz"
-    },
-    {
-      "name": "Karan Aujla",
-      "description": "Bangers by Aujla & others",
-      "image": "cover image/karan aujla/cover.jpg",
-      "youtubePlaylistId": "PLMUccrAjEVQI5hKr_qEgeG-zxUnDtYDXS"
+      "youtubePlaylistId": "PLkZa6xWYS81W6wdF6HSpuqOuVCgu9mzjD"
     },
     {
       "name": "Dark Mood",
@@ -31,16 +19,28 @@
       "youtubePlaylistId": "PLGBKsNyGY-afmc5ff3n1HOYGTmZO1xJGw"
     },
     {
+      "name": "Funky Songs",
+      "description": "Party Time",
+      "image": "cover image/Funky_(mood)/cover.jpg",
+      "youtubePlaylistId": "PLRBp0Fe2Gpgk7YGcZD1BxL4-a-3ws1OZ_"
+    },
+    {
+      "name": "Indie Hits",
+      "description": "Songs by Local Train",
+      "image": "cover image/localtrain.jpg",
+      "youtubePlaylistId": "PLQOetMz_Bcs8Q6G3Pkx3In1MkojS0sKXl"
+    },
+    {
       "name": "Love Mood",
       "description": "Romantic & touching tunes",
       "image": "cover image/Love_(mood)/cover.jpg",
-      "youtubePlaylistId": "PLpUZ06MlpWaBDomczo6ftjdOAL3KNLk2z"
+      "youtubePlaylistId": "PL0Z67tlyTaWqmgv1dF4WskePMh_tjh-2v"
     },
     {
-      "name": "Bright Mood",
+      "name": "Walker Style",
       "description": "Shiny, uplifting, feel-good music",
       "image": "cover image/Bright_(mood)/cover.jpg",
-      "youtubePlaylistId": "PLPSCssPYXhWTTcpNZwYoEQWt8Wc8KO0NV"
+      "youtubePlaylistId": "PLHuHXHyLu7BGUyvaCfG9eO7L5nYtv8mh8"
     }
   ]
 }

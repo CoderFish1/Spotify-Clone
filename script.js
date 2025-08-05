@@ -19,7 +19,13 @@ function onYouTubeIframeAPIReady() {
     videoId: "",
     events: {
       onReady: () => console.log("YouTube Player ready"),
-      onStateChange: (e) => console.log("YT State Change:", e.data),
+   onStateChange: (e) => {
+  if (e.data === YT.PlayerState.ENDED && isYouTubeLooping) {
+    ytPlayer.seekTo(0);
+    ytPlayer.playVideo();
+  }
+}
+
     }, // when the youtube player has loaded succesfully  run this function
     playerVars: {
       // these are setting we give to youtube to change how the player behaves
@@ -152,24 +158,54 @@ async function main() {
       (newSong.currentTime / newSong.duration) * 100 + "%"; // circle moves wrt to time time elapsed
   });
 
+  setInterval(() => {
+  if (isYouTubePlaying) {
+    let current = ytPlayer.getCurrentTime();
+    let duration = ytPlayer.getDuration();
+    const formatTime = (time) => {
+      let minutes = Math.floor(time / 60);
+      let seconds = Math.floor(time % 60);
+      return `${minutes < 10 ? "0" + minutes : minutes} : ${
+        seconds < 10 ? "0" + seconds : seconds
+      }`;
+    };
+    time.innerHTML = `${formatTime(current)} / ${formatTime(duration)}`;
+    document.getElementById("circle").style.left =
+      (current / duration) * 100 + "%";
+  }
+}, 100); // use 500ms instead of 10ms to reduce performance load
+
+setInterval(() => { // setInterval for manual loop fallback
+  if (isYouTubePlaying && isYouTubeLooping) {
+    const state = ytPlayer.getPlayerState();
+    if (state === YT.PlayerState.ENDED) {
+      console.log("Looping YouTube manually...");
+      ytPlayer.seekTo(0);
+      ytPlayer.playVideo();
+    }
+  }
+}, 1000); // check every 1s
+
   // listening for controlling time with seekBar or playLine with circle
   let playLine = document.querySelector(".playLine");
   let circle = document.getElementById("circle");
 
   playLine.addEventListener("click", (e) => {
-    let rect = playLine.getBoundingClientRect(); // gives us the position and size of the .playLine(the seek bar)
-    let clickX = e.clientX - rect.left;
-    //e.clientX gives us the x(horizontal) position of the user's mouse when they clicked(from the left of the screen)
-    //rect.left -> tells how far seekBar is from left of the screen
-    let linePercent = (clickX / rect.width) * 100;
-    let seconds = (linePercent / 100) * newSong.duration;
+  let rect = playLine.getBoundingClientRect(); // gives us the position and size of the .playLine(the seek bar)
+  let clickX = e.clientX - rect.left; // mouse position from left of the bar
+  let percent = (clickX / rect.width); // percentage of click on seekbar
 
-    newSong.currentTime = seconds;
-
-    document.getElementById("circle").style.left =
-      (newSong.currentTime / newSong.duration) * 100 + "%";
-  });
-
+  if (isYouTubePlaying) {
+    let duration = ytPlayer.getDuration();
+    if (duration && !isNaN(duration)) {
+      ytPlayer.seekTo(percent * duration, true); // seek youtube video
+      circle.style.left = percent * 100 + "%"; // move circle
+    }
+  } else {
+    newSong.currentTime = percent * newSong.duration; // seek local song
+    circle.style.left = percent * 100 + "%"; // move circle
+  }
+});
   // event-listening for hamburger(opening)
   let ham = document.getElementById("ham");
   ham.addEventListener("click", () => {
@@ -237,18 +273,21 @@ async function main() {
 
   // logic for looping song
   let loop = document.getElementById("loop");
+  let isYouTubeLooping = false;
+
 
 loop.addEventListener("click", () => {
-  if (!isYouTubePlaying) {
-    newSong.loop = !newSong.loop;
-    console.log("Local loop is now:", newSong.loop ? "On" : "Off");
-    loop.style.color = newSong.loop ? "blueviolet" : "white";
+  if (isYouTubePlaying) {
+    isYouTubeLooping = !isYouTubeLooping;
+    loop.style.color = isYouTubeLooping ? "blueviolet" : "white";
+    console.log("YouTube loop is now:", isYouTubeLooping ? "On" : "Off");
   } else {
-    ytPlayer.loop = !ytPlayer.loop;
-    console.log("YouTube loop is now:", ytPlayer.loop ? "On" : "Off");
-    loop.style.color = ytPlayer.loop ? "blueviolet" : "white";
+    newSong.loop = !newSong.loop;
+    loop.style.color = newSong.loop ? "blueviolet" : "white";
+    console.log("Local loop is now:", newSong.loop ? "On" : "Off");
   }
 });
+
 
 
   // js logic to create dynamic Playlists cards
