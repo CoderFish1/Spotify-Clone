@@ -22,7 +22,8 @@ A sleek and responsive web-based music player inspired by Spotify. Built using H
 | Desktop | Mobile |
 |--------|--------|
 | ![Desktop Screenshot]<img width="1919" height="945" alt="image" src="https://github.com/user-attachments/assets/eb36e518-0d39-49ce-ab9b-695c6bac599f" />
- | ![Mobile Screenshot](./screenshots/mobile.png) |
+ | ![Mobile Screenshot](.![mobileviewVibify](https://github.com/user-attachments/assets/509adb76-302f-4c8d-b7c5-3473f9c0590d)
+) |
 
 ---
 
