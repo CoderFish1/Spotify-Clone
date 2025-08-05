@@ -1,0 +1,46 @@
+{
+  "playlists": [
+    {
+      "name": "NCS Releases",
+      "description": "No Copyright Sounds",
+      "image": "cover image/ncs/cover.jpg",
+      "youtubePlaylistId": "PLRBp0Fe2GpgmCnOzEKi4VF_5b2PItG6tl"
+    },
+    {
+      "name": "Chill Mood",
+      "description": "Relax and chill with these tracks",
+      "image": "cover image/Chill_(mood)/cover.jpg",
+      "youtubePlaylistId": "PLPFzKsPt50V8azAzY0Sg2go23AL9nuAAF"
+    },
+    {
+      "name": "Diljit Dosanjh",
+      "description": "Top hits from Diljit",
+      "image": "cover image/Diljit/cover.jpg",
+      "youtubePlaylistId": "PLTI1f4VXRUmY3cwe3Lk_6w0rtZptLKKDz"
+    },
+    {
+      "name": "Karan Aujla",
+      "description": "Bangers by Aujla & others",
+      "image": "cover image/karan aujla/cover.jpg",
+      "youtubePlaylistId": "PLMUccrAjEVQI5hKr_qEgeG-zxUnDtYDXS"
+    },
+    {
+      "name": "Dark Mood",
+      "description": "Moody and atmospheric vibes",
+      "image": "cover image/Dark_(mood)/cover.jpg",
+      "youtubePlaylistId": "PLGBKsNyGY-afmc5ff3n1HOYGTmZO1xJGw"
+    },
+    {
+      "name": "Love Mood",
+      "description": "Romantic & touching tunes",
+      "image": "cover image/Love_(mood)/cover.jpg",
+      "youtubePlaylistId": "PLpUZ06MlpWaBDomczo6ftjdOAL3KNLk2z"
+    },
+    {
+      "name": "Bright Mood",
+      "description": "Shiny, uplifting, feel-good music",
+      "image": "cover image/Bright_(mood)/cover.jpg",
+      "youtubePlaylistId": "PLPSCssPYXhWTTcpNZwYoEQWt8Wc8KO0NV"
+    }
+  ]
+}

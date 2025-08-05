@@ -10,6 +10,18 @@
       rel="stylesheet"
     />
   </head>
+  <div
+    id="hiddenPlayer"
+    style="
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      left: -9999px;
+      top: -9999px;
+    "
+  ></div>
+
   <body>
     <div class="container">
       <div class="nav">
@@ -68,117 +80,18 @@
             <div class="Cards">
               <span>&nbsp;<i class="ri-music-2-fill"></i>&nbsp;&nbsp;</span>
             </div>
-          </div>      
+          </div>
         </div>
 
-        <div class="right">                    
+        <div class="right">
           <div id="hamburger">
             <i id="ham" class="ri-menu-line"></i>
           </div>
           <div class="Rheading">Spotify Playlist</div>
           <div class="devInfo">✨ Made with 💻 by <span>Shrey</span></div>
 
-          <div class="rightCards">
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
-            <div class="rCard">
-              <i
-                id="cardPlay"
-                class="ri-play-circle-fill"
-                style="font-size: 50px; color: #a78bfa"
-              ></i>
-              <img src="Echoes of Silence.jpeg" alt="Img" />
-              <h4 class="playlist-name">PLAYLIST-NAME</h4>
-              <span class="playlist-desc">PLAYLIST-DESCRIPTION</span>
-            </div>
+          <div class="rightCards" id="playlist-container">
+            // Dynamic Cards using Js
           </div>
 
           <div class="playCard">
@@ -209,6 +122,8 @@
         </div>
       </div>
     </div>
+    <script src="config.js"></script>
     <script src="script.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
   </body>
 </html>

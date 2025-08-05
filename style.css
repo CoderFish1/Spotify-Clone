@@ -66,12 +66,8 @@ ul li:hover {
 #log {
   background-color: aliceblue;
   color: black;
-  padding: 2vh 2vw;
+  padding: 1vh 1.5vw;
   border-radius: 12px;
-}
-#log:hover {
-  transform: scale(1.05);
-  background-color: aliceblue;
 }
 
 /*Main area below fixed navbar */
@@ -319,7 +315,7 @@ ul li:hover {
   width: 96%;
   height: 3px;
   background-color: rgb(71, 153, 139);
-  bottom: 30%;
+  bottom: 23%;
   cursor: pointer;
 }
 #circle {
@@ -342,7 +338,7 @@ ul li:hover {
   position: absolute;
   left: 35%;
   gap: 3vw;
-  top: 20%;
+  top: 32%;
   cursor: pointer;
 }
 .playBtn i {
@@ -448,9 +444,9 @@ ul li:hover {
     height: 13vh;
   }
   .playBtn {
-    left: 21%;
+    left: 17%;
     gap: 3vw;
-    top: 21%;
+    top: 37%;
   }
   .playBtn i {
     font-size: 7vw;
@@ -516,4 +512,10 @@ ul li:hover {
     bottom: 13.3vh;
     right: 4.6vw;
   }
+  #log {
+  background-color: black;
+  color: rgb(170, 187, 204);;
+  padding: 0;
+  border-radius: 0;
+}
 }
