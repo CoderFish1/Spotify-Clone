@@ -58,21 +58,9 @@ function displayTime() {
 }
 
 async function getSongs() {
-  let a = await fetch("/songs/");
-  let response = await a.text();
-
-  let div = document.createElement("div");
-  div.innerHTML = response;
-  let as = div.getElementsByTagName("a"); // Get all <a> elements
-  let songs = [];
-
-  for (let index = 0; index < as.length; index++) {
-    const element = as[index];
-    if (element.href.endsWith(".mp3")) {
-      songs.push(element.href);
-    }
-  }
-  return songs;
+  const res = await fetch("songs/songs.json");
+  const songs = await res.json(); // Directly parse JSON
+  return songs; // Already .mp3 paths
 }
 
 playMusic = (track) => {
